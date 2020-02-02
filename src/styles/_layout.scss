@@ -1,0 +1,64 @@
+$breakpoint-sm-upper: 575px;
+$breakpoint-md-lower: 576px;
+$breakpoint-md-upper: 839px;
+$breakpoint-lg-lower: 840px;
+$breakpoint-lg-upper: 1260px;
+$breakpint-xl-lower: 1261px;
+
+$content-width: $breakpoint-lg-upper;
+
+@mixin mobile {
+  @media screen and (max-width: $breakpoint-sm-upper) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media screen and (min-width: $breakpoint-md-lower) and (max-width: $breakpoint-md-upper) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $breakpoint-md-upper) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media screen and (min-width: $breakpoint-lg-lower) and (max-width: $breakpoint-lg-upper) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: $breakpoint-lg-upper) {
+    @content;
+  }
+}
+
+@mixin lg-display {
+  @media screen and (min-width: $breakpoint-xl-lower) {
+    @content;
+  }
+}
+
+/* Space and sizing system 
+    4px   (16 x 0.25)
+    6px  (16 x 4)
+    8px   (16 x 0.5)
+    12px  (16 x 0.75)
+    16px  (16 x 1)
+    24px  (16 x 1.5)
+    32px  (16 x 2)
+    40px  (16 x 2.5)
+    48px  (16 x 3)
+    96px  (16 x 6)
+    128px (16 x 8)
+    192px (16 x 12)
+    256px (16 x 16)
+    384px (16 x 24)
+    512px (16 x 32)
+    640px (16 x 40)
+    768px (16 x 48)
+*/

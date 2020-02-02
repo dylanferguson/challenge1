@@ -1,0 +1,14 @@
+{
+    "files": [
+      {
+        "path": "./dist/typescript.*.js",
+        "maxSize": "5 kB",
+        "compression": "brotli"
+      },
+      {
+        "path": "./dist/main.*.css",
+        "maxSize": "5 kB",
+        "compression": "brotli"
+      }
+    ]
+  }

@@ -1,0 +1,27 @@
+name: Test
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+jobs:
+  test:
+    name: Run Lighthouse CI, bundlesize
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+      - name: npm install, build
+        run: |
+          npm ci
+          npm run build
+      - name: run Lighthouse CI
+        run: |
+          sudo npm install -g @lhci/cli@0.3.x
+          lhci autorun --config-path=./lighthouserc.json || echo "LHCI failed!"
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

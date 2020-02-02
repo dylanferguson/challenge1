@@ -1,0 +1,22 @@
+{
+    "ci": {
+      "collect": {
+        "numberOfRuns": 2,
+        "staticDistDir": "__sapper__/build"
+      },
+      "assert": {
+        "assertions": {
+          "categories:accessibility": ["error", {"minScore": 1}],
+          "categories:best-practices": ["warn", {"minScore": 1}],
+          "categories:performance": ["error", {"minScore": 1}],
+          "categories:pwa": ["off"],
+          "categories:seo": ["error", {"minScore": 1}],
+          "first-contentful-paint": ["warn", {"maxNumericValue": 1500, "aggregationMethod": "median-run"}],
+          "interactive": ["warn", {"maxNumericValue": 1500, "aggregationMethod": "median-run"}]
+        }
+      },
+      "upload": {
+        "target": "temporary-public-storage"
+      }
+    }
+}

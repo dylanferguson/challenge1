@@ -1,0 +1,52 @@
+{
+  "name": "digital-content-dev-challenge",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "sapper dev",
+    "debug": "ndb npm run dev",
+    "serve:lhci": "NODE_ENV=production npm run build && npm run start",
+    "build": "sapper build --legacy",
+    "export": "sapper export --legacy",
+    "start": "node __sapper__/build",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run"
+  },
+  "dependencies": {
+    "compression": "^1.7.1",
+    "polka": "next",
+    "sirv": "^0.4.0",
+    "svelte-preprocess": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@rollup/plugin-replace": "^2.2.0",
+    "autoprefixer": "^9.7.4",
+    "bundlesize": "^0.18.0",
+    "chart.js": "^2.9.3",
+    "cypress": "^3.8.3",
+    "moment": "^2.24.0",
+    "ndb": "^1.1.5",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.26",
+    "postcss-load-config": "^2.1.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-babel": "^4.0.2",
+    "rollup-plugin-svelte": "^5.0.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "sapper": "^0.27.0",
+    "svelte": "^3.0.0",
+    "typescript": "^3.7.5"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
